@@ -2,6 +2,7 @@
   // ---- Edit these attributes
   $auth_token = 'AUTH_TOKEN'; // Get from https://www.getvero.com/account
   $user_id    = '12345';
+  $user_email = 'james@getvero.com';
   $event_name = 'Purchased product';
 
   // ---- Optional: Specify any event properties
@@ -13,7 +14,7 @@
   // ---- Example of making a REST call to Vero
   $request_data = array(
     'auth_token'        => $auth_token,
-    'identity'          => array('id' => $user_id),
+    'identity'          => array('id' => $user_id, 'email' => $user_email),
     'event_name'        => $event_name,
     'data'              => $event_data,
     'development_mode'  => 'false'

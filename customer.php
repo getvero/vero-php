@@ -15,7 +15,7 @@
   );
   $request_data = json_encode($request_data);
 
-  $endpoint = 'http://localhost:3000/api/v2/users/track.json';
+  $endpoint = 'https://api.getvero.com/api/v2/users/track.json';
   $headers  = array('Accept: application/json', 'Content-Type: application/json');
 
   $handle = curl_init();

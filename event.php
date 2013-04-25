@@ -20,7 +20,7 @@
   );
   $request_data    = json_encode($request_data);
 
-  $endpoint = 'https://www.getvero.com/api/v2/events/track.json';
+  $endpoint = 'https://api.getvero.com/api/v2/events/track.json';
   $headers = array('Accept: application/json', 'Content-Type: application/json');
 
   $handle  = curl_init();

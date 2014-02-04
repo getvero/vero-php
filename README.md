@@ -1,5 +1,11 @@
-# vero-php
+Vero for PHP
+============
 
-The two included scripts are simple examples you can use to track a customer and event with the Vero REST API.
+Vero PHP client is using cURL on top on our Rest API. Here's how to use it:
 
-For a more indepth overview on each of the supported API endpoints, see our API reference: [Events API](https://github.com/getvero/vero-api/blob/master/sections/api/events.md) and [User API](https://github.com/getvero/vero-api/blob/master/sections/api/users.md).
+```php
+$v = new Vero\Client("YOUR_AUTH_TOKEN");
+$v->identify("1234567890", "jeff@yourdomain.com", array('First name' => 'Jeff', 'Last name' => 'Kane'));
+$v->track("View Product", array('identifier' => '1234567890'), array('Product name' => 'Blue shoes', 'Price' => 99));
+$v->unsubscribe("1234567890");
+```

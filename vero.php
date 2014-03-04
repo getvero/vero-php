@@ -8,7 +8,7 @@
 
   class Vero {
 
-    private static $client;
+    private $client;
 
     public function __construct($auth_token, $development_mode = false) {
       if (!$auth_token)

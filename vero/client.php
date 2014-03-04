@@ -4,8 +4,8 @@
 
   class Client {
 
-    private static $auth_token;
-    private static $development_mode;
+    private $auth_token;
+    private $development_mode;
 
     public function __construct($auth_token, $development_mode = false) {
       $this->auth_token = $auth_token;

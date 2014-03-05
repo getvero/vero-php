@@ -23,6 +23,13 @@
 
       return $this->client->identify($user_id, $email, $data);
     }
+    
+    public function reidentify($user_id, $new_user_id) {
+      if (!$user_id || !$new_user_id)
+        throw new Exception("Vero::Identify requires a user id AND a new user id");
+
+      return $this->client->reidentify($user_id, $new_user_id);
+    }
 
     public function update($user_id, $changes = array()) {
       if (!$user_id)

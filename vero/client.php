@@ -26,6 +26,18 @@
 
       return $this->_send($endpoint, $request_data);
     }
+    
+    public function reidentify($user_id, $new_user_id) {
+      $endpoint = "https://api.getvero.com/api/v2/users/reidentify.json";
+      $request_data = array(
+        'auth_token'        => $this->auth_token,
+        'id'                => $user_id,
+        'new_id'            => $new_user_id,
+        'development_mode'  => $this->development_mode
+      );
+
+      return $this->_send($endpoint, $request_data, 'put');
+    }
 
     public function update($user_id, $changes) {
       $endpoint = "https://api.getvero.com/api/v2/users/edit.json";

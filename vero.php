@@ -4,7 +4,7 @@
     throw new Exception('Vero needs the JSON PHP extension.');
   }
 
-  require(dirname(__FILE__) . '/vero/client.php');
+  require('./vero/client.php');
 
   class Vero {
 
@@ -23,7 +23,7 @@
 
       return $this->client->identify($user_id, $email, $data);
     }
-    
+
     public function reidentify($user_id, $new_user_id) {
       if (!$user_id || !$new_user_id)
         throw new Exception("Vero::Identify requires a user id AND a new user id");

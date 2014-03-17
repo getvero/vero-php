@@ -4,6 +4,9 @@ Vero PHP client
 Vero PHP client is using cURL on top on our Rest API. Here's how to use it:
 
 ```php
+
+require_once('PATH/TO/FILE/vero.php');
+
 $v = new Vero("YOUR_AUTH_TOKEN");
 
 $v->identify("1234567890", "jeff@yourdomain.com", array('First name' => 'Jeff', 'Last name' => 'Kane'));

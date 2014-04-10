@@ -58,13 +58,13 @@
       return $this->client->unsubscribe($user_id);
     }
 
-    public function track($event_name, $identity = array(), $data = array()) {
+    public function track($event_name, $identity = array(), $data = array(), $extras = array()) {
       if (!$event_name)
         throw new Exception("Vero::Update requires an event name");
       if (($identity == array()) || ((gettype($identity) == 'array') && (!$identity['id'])))
         throw new Exception("Vero::Update requires an identity profile with at least an id property");
 
-      return $this->client->track($event_name, $identity, $data);
+      return $this->client->track($event_name, $identity, $data, $extras);
     }
 
   }

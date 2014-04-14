@@ -17,7 +17,7 @@
       $request_data = array(
         'auth_token'        => $this->auth_token,
         'id'                => $user_id,
-        'data'              => $data,
+        'data'              => ($data == array() ? NULL : $data),
         'development_mode'  => $this->development_mode
       );
 
@@ -81,7 +81,7 @@
         'identity'          => $identity,
         'event_name'        => $event_name,
         'data'              => $data,
-        'extras'            => $extras,
+        'extras'            => ($extras == array() ? NULL : $extras),
         'development_mode'  => $this->development_mode
       );
 

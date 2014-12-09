@@ -80,7 +80,7 @@
         'auth_token'        => $this->auth_token,
         'identity'          => $identity,
         'event_name'        => $event_name,
-        'data'              => $data,
+        'data'              => ($data == array() ? NULL : $data),
         'extras'            => ($extras == array() ? NULL : $extras),
         'development_mode'  => $this->development_mode
       );

@@ -17,3 +17,8 @@ $v->track("Subscribe to service", array('id' => '1234567890'), array('Plan name'
 
 $v->unsubscribe("1234567890");
 ```
+
+Change log
+==========
+
+* 20-12-2014: Fix for track function when no data are being tracked

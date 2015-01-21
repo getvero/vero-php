@@ -4,7 +4,7 @@
     throw new Exception('Vero needs the JSON PHP extension.');
   }
 
-  require('./vero/client.php');
+  require(dirname(__FILE__) . '/vero/client.php');
 
   class Vero {
 

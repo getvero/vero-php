@@ -74,14 +74,14 @@
       return $this->_send($endpoint, $request_data);
     }
 
-    public function track($event_name, $identity, array $data, array $extras = null) {        
+    public function track($event_name, $identity, $data, $extras = array()) {
       $endpoint = "https://api.getvero.com/api/v2/events/track.json";
       $request_data = array(
         'auth_token'        => $this->auth_token,
         'identity'          => $identity,
         'event_name'        => $event_name,
-        'data'              => (empty($data) ? NULL : $data),
-        'extras'            => $extras,
+        'data'              => ($data == array() ? NULL : $data),
+        'extras'            => ($extras == array() ? NULL : $extras),
         'development_mode'  => $this->development_mode
       );
 

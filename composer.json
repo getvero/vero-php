@@ -3,7 +3,7 @@
     "description": "Library for tracking users and event with Vero's communications platform",
     "require": {
         "php": ">=5.3.0"
-    }
+    },
     "autoload": {
         "classmap": ["vero.php"]
     }

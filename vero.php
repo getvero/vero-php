@@ -10,11 +10,11 @@
 
     private $client;
 
-    public function __construct($auth_token, $development_mode = false) {
+    public function __construct($auth_token) {
       if (!$auth_token)
         throw new Exception("VeroClient auth_token parameter is required");
 
-      $this->client = new Vero\Client($auth_token, $development_mode);
+      $this->client = new Vero\Client($auth_token);
     }
 
     public function identify($user_id, $email = null, $data = array()) {

@@ -5,11 +5,9 @@
   class Client {
 
     private $auth_token;
-    private $development_mode;
 
-    public function __construct($auth_token, $development_mode = false) {
+    public function __construct($auth_token) {
       $this->auth_token = $auth_token;
-      $this->development_mode = $development_mode;
     }
 
     public function identify($user_id, $email, $data) {
@@ -17,8 +15,7 @@
       $request_data = array(
         'auth_token'        => $this->auth_token,
         'id'                => $user_id,
-        'data'              => ($data == array() ? NULL : $data),
-        'development_mode'  => $this->development_mode
+        'data'              => ($data == array() ? NULL : $data)
       );
 
       if ($email)
@@ -32,8 +29,7 @@
       $request_data = array(
         'auth_token'        => $this->auth_token,
         'id'                => $user_id,
-        'new_id'            => $new_user_id,
-        'development_mode'  => $this->development_mode
+        'new_id'            => $new_user_id
       );
 
       return $this->_send($endpoint, $request_data, 'put');
@@ -44,8 +40,7 @@
       $request_data = array(
         'auth_token'        => $this->auth_token,
         'id'                => $user_id,
-        'changes'           => $changes,
-        'development_mode'  => $this->development_mode
+        'changes'           => $changes
       );
 
       return $this->_send($endpoint, $request_data, 'put');
@@ -57,8 +52,7 @@
         'auth_token'        => $this->auth_token,
         'id'                => $user_id,
         'add'               => $add,
-        'remove'            => $remove,
-        'development_mode'  => $this->development_mode
+        'remove'            => $remove
       );
 
       return $this->_send($endpoint, $request_data, 'put');
@@ -81,8 +75,7 @@
         'identity'          => $identity,
         'event_name'        => $event_name,
         'data'              => ($data == array() ? NULL : $data),
-        'extras'            => ($extras == array() ? NULL : $extras),
-        'development_mode'  => $this->development_mode
+        'extras'            => ($extras == array() ? NULL : $extras)
       );
 
       return $this->_send($endpoint, $request_data);

@@ -58,6 +58,13 @@
       return $this->client->unsubscribe($user_id);
     }
 
+    public function resubscribe($user_id) {
+      if (!$user_id)
+        throw new Exception("Vero::Resubscribe requires a user id");
+
+      return $this->client->resubscribe($user_id);
+    }
+
     public function track($event_name, $identity = array(), $data = array(), $extras = array()) {
       if (!$event_name)
         throw new Exception("Vero::Update requires an event name");

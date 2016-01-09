@@ -4,7 +4,6 @@ Vero PHP client
 Vero PHP client is using cURL on top on our Rest API. Here's how to use it:
 
 ```php
-
 require_once('PATH/TO/FILE/vero.php');
 
 $v = new Vero("YOUR_AUTH_TOKEN");
@@ -17,9 +16,3 @@ $v->track("Subscribe to service", array('id' => '1234567890'), array('Plan name'
 
 $v->unsubscribe("1234567890");
 ```
-
-Change log
-==========
-
-* 03-11-2015: Remove development_mode
-* 20-12-2014: Fix for track function when no data are being tracked

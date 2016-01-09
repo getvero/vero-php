@@ -68,6 +68,16 @@
       return $this->_send($endpoint, $request_data);
     }
 
+    public function resubscribe($user_id) {
+      $endpoint = "https://api.getvero.com/api/v2/users/resubscribe.json";
+      $request_data = array(
+        'auth_token'        => $this->auth_token,
+        'id'                => $user_id
+      );
+
+      return $this->_send($endpoint, $request_data);
+    }
+
     public function track($event_name, $identity, $data, $extras = array()) {
       $endpoint = "https://api.getvero.com/api/v2/events/track.json";
       $request_data = array(

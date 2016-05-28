@@ -74,6 +74,10 @@
       return $this->client->track($event_name, $identity, $data, $extras);
     }
 
+    public function heartbeat() {
+        return $this->client->heartbeat();
+    }
+
   }
 
 ?>

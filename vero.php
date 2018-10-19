@@ -51,18 +51,18 @@
       return $this->client->tags($user_id, $add, $remove);
     }
 
-    public function unsubscribe($user_id) {
-      if (!$user_id)
-        throw new Exception("Vero::Unsubscribe requires a user id");
+    public function unsubscribe($email) {
+      if (!$email)
+        throw new Exception("Vero::Unsubscribe requires a email");
 
-      return $this->client->unsubscribe($user_id);
+      return $this->client->unsubscribe($email);
     }
 
-    public function resubscribe($user_id) {
-      if (!$user_id)
-        throw new Exception("Vero::Resubscribe requires a user id");
+    public function resubscribe($email) {
+      if (!$email)
+        throw new Exception("Vero::Resubscribe requires a email");
 
-      return $this->client->resubscribe($user_id);
+      return $this->client->resubscribe($email);
     }
 
     public function track($event_name, $identity = array(), $data = array(), $extras = array()) {

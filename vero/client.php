@@ -49,7 +49,7 @@
     public function tags($user_id, $add, $remove) {
       $endpoint = "https://api.getvero.com/api/v2/users/tags/edit.json";
       $request_data = array(
-        'auth_token'        => $this->auth_token,        
+        'auth_token'        => $this->auth_token,
         'id'                => $user_id,
         'add'               => $add,
         'remove'            => $remove

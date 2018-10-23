@@ -58,21 +58,23 @@
       return $this->_send($endpoint, $request_data, 'put');
     }
 
-    public function unsubscribe($user_id) {
+    public function unsubscribe($user_id, $email) {
       $endpoint = "https://api.getvero.com/api/v2/users/unsubscribe.json";
       $request_data = array(
         'auth_token'        => $this->auth_token,
-        'id'                => $user_id
+        'id'                => $user_id,
+        'email'             => $email
       );
 
       return $this->_send($endpoint, $request_data);
     }
 
-    public function resubscribe($user_id) {
+    public function resubscribe($user_id, $email) {
       $endpoint = "https://api.getvero.com/api/v2/users/resubscribe.json";
       $request_data = array(
         'auth_token'        => $this->auth_token,
-        'id'                => $user_id
+        'id'                => $user_id,
+        'email'             => $email
       );
 
       return $this->_send($endpoint, $request_data);

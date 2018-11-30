@@ -93,6 +93,12 @@
       return $this->_send($endpoint, $request_data);
     }
 
+    public function heartbeat() {
+        $endpoint = "https://api.getvero.com/api/v2/heartbeat";
+        $request_data=array();
+        return $this->_send($endpoint, $request_data, 'get');
+    }
+
     private function _send($endpoint, $request_data, $request_type = 'post') {
       $request_data = json_encode($request_data);
 
@@ -108,8 +114,12 @@
         curl_setopt($handle, CURLOPT_POST, true);
       } elseif ($request_type == 'put') {
         curl_setopt($handle, CURLOPT_CUSTOMREQUEST, "PUT");
+      } else if ($request_type == 'get') {
+      	curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'GET');
       }
-      curl_setopt($handle, CURLOPT_POSTFIELDS, $request_data);
+      if($request_type == 'post' || $request_type == 'put') {
+        curl_setopt($handle, CURLOPT_POSTFIELDS, $request_data);
+      }
 
       $result = curl_exec($handle);
       $code   = curl_getinfo($handle, CURLINFO_HTTP_CODE);

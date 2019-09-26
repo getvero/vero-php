@@ -1,4 +1,5 @@
 <?php
+	namespace Vero;
 
   if (!function_exists('json_encode')) {
     throw new Exception('Vero needs the JSON PHP extension.');

@@ -1,4 +1,5 @@
 <?php
+	namespace Vero;
 
   if (!function_exists('json_encode')) {
     throw new Exception('Vero needs the JSON PHP extension.');
@@ -14,7 +15,7 @@
       if (!$auth_token)
         throw new Exception("VeroClient auth_token parameter is required");
 
-      $this->client = new Vero\Client($auth_token);
+      $this->client = new Client($auth_token);
     }
 
     public function identify($user_id, $email = null, $data = array()) {

@@ -115,7 +115,10 @@
       $code   = curl_getinfo($handle, CURLINFO_HTTP_CODE);
       curl_close($handle);
 
-      return $result;
+      return array(
+        'result' => $result,
+        'statusCode' => $code
+      );
     }
 
   }

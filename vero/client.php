@@ -5,9 +5,13 @@
   class Client {
 
     private $auth_token;
+    private $connection_timeout;
+    private $timeout;
 
-    public function __construct($auth_token) {
+    public function __construct($auth_token, $connection_timeout = 3, $timeout = 10) {
       $this->auth_token = $auth_token;
+      $this->connection_timeout = $connection_timeout;
+      $this->timeout = $timeout;
     }
 
     public function identify($user_id, $email, $data) {
@@ -104,6 +108,9 @@
       curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($handle, CURLOPT_SSL_VERIFYHOST, false);
       curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
+      curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, $this->connection_timeout);
+      curl_setopt($handle, CURLOPT_TIMEOUT, $this->timeout);
+
       if ($request_type == 'post') {
         curl_setopt($handle, CURLOPT_POST, true);
       } elseif ($request_type == 'put') {
